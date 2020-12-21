@@ -10,4 +10,6 @@ public interface ChildService {
 	
 	public String addAChild(Child child);
 
+	public void removeAChild(String id);
+
 }

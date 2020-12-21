@@ -71,4 +71,10 @@ public class ChildServiceImpl implements ChildService {
 
 	}
 
+	@Override
+	public void removeAChild(String id) {
+		childRepository.deleteById(id);
+		
+	}
+
 }
