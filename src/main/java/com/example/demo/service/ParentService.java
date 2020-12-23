@@ -10,4 +10,6 @@ public interface ParentService {
 
 	public String addAParent(Parent parent);
 
+    public String removeAParent(String id);
 }
+

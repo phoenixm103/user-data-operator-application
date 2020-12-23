@@ -22,6 +22,7 @@ public class ChildServiceImpl implements ChildService {
 
     @Override
     public List<Child> getAllChild() {
+
         return childRepository.findAll();
     }
 
@@ -39,7 +40,7 @@ public class ChildServiceImpl implements ChildService {
                 isChildExist = true;
             }
         }
-        if (isChildExist == false) {
+        if (!isChildExist) {
 			/*
 			 * CHILD DOES NOT EXIST ALREADY, SYSTEM IS GOING TO ADD IT TO PARENT COLLECTION
 			 */
@@ -60,9 +61,10 @@ public class ChildServiceImpl implements ChildService {
         for (int i = 0; i < parentList.size(); i++) {
             if (parentList.get(i).getCivilId().equals(child.getParent().getCivilId())) {
                 isParentExist = true;
+                break;
             }
         }
-        if (isParentExist == false) {
+        if (!isParentExist) {
 			/*
 			 * PARENT DOES NOT EXIST ALREADY, SYSTEM IS GOING TO ADD IT TO PARENT COLLECTION
 			 */
@@ -72,9 +74,26 @@ public class ChildServiceImpl implements ChildService {
     }
 
     @Override
-    public void removeAChild(String id) {
-        childRepository.deleteById(id);
+    public String removeAChild(String civilId) {
 
+        boolean isChildExist = false;
+        List<Child> childList = childRepository.findAll();
+        for (int i = 0; i < childList.size(); i++) {
+            if (childList.get(i).getCivilId().equals(civilId)) {
+                isChildExist = true;
+                break;
+            }
+        }
+        if (isChildExist) {
+			/*
+			 * CHILD EXISTS ALREADY, SYSTEM IS GOING TO DELETE IT
+			 */
+            childRepository.deleteById(civilId);
+            return "CHILD ID : "+civilId+" REMOVED SUCCESSFULLY";
+        }
+        else {
+            return "CHILD ID : "+civilId+" IS INVALID";
+        }
     }
 
 }

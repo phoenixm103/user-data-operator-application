@@ -60,13 +60,20 @@ public class ChildController {
 
 	}
 	
-	@DeleteMapping("/{id}")
-	public void removeAChild(@PathVariable String id) {
-		childService.removeAChild(id);
+	@DeleteMapping("/{civilId}")
+	public String removeAChild(@PathVariable String civilId) {
+
+		try {
+			//INPUT VALIDATION
+			if (civilId.isEmpty()) {
+				return null;
+			} else {
+				return childService.removeAChild(civilId);
+			}
+		} catch (NullPointerException e) {
+			return "INVALID INPUT : NO GIVEN CIVIL-ID OR NULL ID";
+		}
+
 	}
-	
-	
-	
-	
 
 }
