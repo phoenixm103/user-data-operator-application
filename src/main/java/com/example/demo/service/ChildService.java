@@ -12,4 +12,5 @@ public interface ChildService {
 
 	public String removeAChild(String id);
 
+    public String updateAChild(Child child, String civilId);
 }

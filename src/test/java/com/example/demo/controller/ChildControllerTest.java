@@ -21,10 +21,12 @@ import com.example.demo.serviceimplementation.ChildServiceImpl;
 
 @ExtendWith(MockitoExtension.class)
 public class ChildControllerTest {
-	@Mock
-	ChildServiceImpl childServiceImpl;
+
 	@InjectMocks
 	ChildController childController;
+	@Mock
+	ChildServiceImpl childServiceImpl;
+
 
 	@Test
 	@Description("Adding a Child using addAChild() method ")
@@ -130,6 +132,20 @@ public class ChildControllerTest {
 		// " IS INVALID");
 		String actual = childController.removeAChild(civilId);
 		String expected = "INVALID INPUT : NO GIVEN CIVIL-ID OR NULL ID";
+		Assert.assertTrue(EqualsBuilder.reflectionEquals(actual, expected));
+
+	}
+
+	@Test
+	@Description("Updating a child")
+	public void test_updateAChild() {
+		String civilId = "123";
+		Child child = new Child("123", "moin", "mahmud",
+				new Parent("456", "golam", "mohammed", new Address("2", "CTG", "CTG", "4321")));
+		when(childServiceImpl.updateAChild(child,civilId)).thenReturn("CHILD WITH CIVIL_ID : "+"123"+" IS UPDATED SUCCESSFULLY");
+		String actual = childController.updateAChild(child,civilId);
+		String expected = "CHILD WITH CIVIL_ID : "+"123"+" IS UPDATED SUCCESSFULLY";
+		System.out.println(actual);
 		Assert.assertTrue(EqualsBuilder.reflectionEquals(actual, expected));
 
 	}

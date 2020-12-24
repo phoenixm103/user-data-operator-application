@@ -62,4 +62,34 @@ public class ParentController {
             return "INVALID INPUT : NO GIVEN CIVIL-ID OR NULL ID";
         }
     }
+
+    @PutMapping("/{civilId}")
+    public String addAParent(@RequestBody Parent parent,@PathVariable String civilId) {
+
+        try {
+            // INPUT VALIDATION
+            if (parent.getCivilId().isEmpty()) {
+                return null;
+            } else if (parent.getFirstname().isEmpty()) {
+                return null;
+            } else if (parent.getLastname().isEmpty()) {
+                return null;
+            } else if (parent.getAddress().getCity().isEmpty()) {
+                return null;
+            } else if (parent.getAddress().getState().isEmpty()) {
+                return null;
+            } else if (parent.getAddress().getStreet().isEmpty()) {
+                return null;
+            } else if (parent.getAddress().getZip().isEmpty()) {
+                return null;
+            } else {
+                // INPUT IS VALID
+                return parentService.updateAParent(parent,civilId);
+
+            }
+        } catch (NullPointerException e) {
+            return "INVALID INPUT : ONE OR MORE INPUT FIELDS ARE NULL";
+        }
+
+    }
 }
