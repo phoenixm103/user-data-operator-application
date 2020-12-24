@@ -43,7 +43,7 @@ public class ChildControllerTest {
 
 	@Test
 	@Description("Attempting to add a Child using addAChild() method but civilId is null")
-	public void test_addAChild_but_null_child_civilId() {
+	public void test_addAChild_with_null_child_civilId() {
 		Child child = new Child(null, "moin", "mahmud",
 				new Parent("456", "golam", "mohammed", new Address("2", "CTG", "CTG", "4321")));
 		String actual = childController.addAChild(child);
@@ -55,7 +55,7 @@ public class ChildControllerTest {
 
 	@Test
 	@Description("Attempting to add a Child using addAChild() method but parent's civilId is null")
-	public void test_addAChild_but_null_parent_civilId() {
+	public void test_addAChild_with_null_parent_civilId() {
 		Child child = new Child("123", "moin", "mahmud",
 				new Parent(null, "golam", "mohammed", new Address("2", "CTG", "CTG", "4321")));
 		String actual = childController.addAChild(child);
@@ -66,7 +66,7 @@ public class ChildControllerTest {
 
 	@Test
 	@Description("Attempting to add a Child using addAChild() method but firstname is null ")
-	public void test_addAChild_but_null_Child_firstName() {
+	public void test_addAChild_with_null_Child_firstName() {
 		Child child = new Child("123", null, "mahmud",
 				new Parent("456", "golam", "mohammed", new Address("2", "CTG", "CTG", "4321")));
 		String actual = childController.addAChild(child);
@@ -77,7 +77,7 @@ public class ChildControllerTest {
 
 	@Test
 	@Description("Attempting to add a Child using addAChild() method but multiple fields are null ")
-	public void test_addAChild_but_null_Multiple_fields() {
+	public void test_addAChild_with_null_Multiple_fields() {
 		Child child = new Child("123", null, "mahmud",
 				new Parent(null, null, "mohammed", new Address("2", "CTG", "CTG", "4321")));
 		String actual = childController.addAChild(child);
@@ -115,7 +115,7 @@ public class ChildControllerTest {
 
 	@Test
 	@Description("Attempting to remove a child but Invalid civilId")
-	public void test_removeAChild_but_Invalid_civilId() {
+	public void test_removeAChild_with_Invalid_civilId() {
 		String civilId = "123";
 		when(childServiceImpl.removeAChild("123")).thenReturn("CHILD ID : " + "123" + " IS INVALID");
 		String actual = childController.removeAChild(civilId);
@@ -126,7 +126,7 @@ public class ChildControllerTest {
 
 	@Test
 	@Description("Attempting to remove a child but null civilId")
-	public void test_removeAChild_but_null_civilId() {
+	public void test_removeAChild_with_null_civilId() {
 		String civilId = null;
 		// when(childServiceImpl.removeAChild("123")).thenReturn("CHILD ID : " + "123" +
 		// " IS INVALID");
