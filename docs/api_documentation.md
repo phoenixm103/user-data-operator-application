@@ -1,7 +1,7 @@
-## user-data-operator-application API Documantation
+# user-data-operator-application API Documantation
 
-#### `Version`: 1.0.0
-#### `Date`: 2020-12-24
+### `Version`: 1.0.0
+### `Date`: 2020-12-24
 user-data-operator-application will expose several APIs.
 The endpoints are:
 
@@ -129,9 +129,8 @@ If the given id is invalid
 If the given id is valid
 
 `Demo Response`: `PARENT WITH CIVIL_ID : 462 IS UPDATED SUCCESSFULLY`
-#CHILD starts here
 
-### 1. /child
+### 3. /child
 
 #### 1. When triggered it returns List of childs already stored in Database.
 `method` : 
@@ -233,7 +232,7 @@ If one or more input values are null
 `Demo Response` :
             `INVALID INPUT : ONE OR MORE INPUT FIELDS ARE NULL`
             
-### 2. /child/{civilId}           
+### 4. /child/{civilId}           
 #### 1. When triggered it deletes the child with given civilId from Database.
 `method` : 
             DELETE
