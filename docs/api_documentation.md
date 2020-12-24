@@ -5,7 +5,7 @@
 user-data-operator-application will expose several APIs.
 The endpoints are:
 
-`### 1. /parent`
+### 1. /parent
 
 #### 1. When triggered it returns List of parents already stored in Database.
 `method` : 
@@ -87,7 +87,7 @@ If one or more input values are null
 `Demo Response` :
             `INVALID INPUT : ONE OR MORE INPUT FIELDS ARE NULL`
             
-`### 2. /parent/{civilId}`           
+### 2. /parent/{civilId}           
 #### 1. When triggered it deletes the parent with given civilId from Database.
 `method` : 
             DELETE
@@ -130,7 +130,7 @@ If the given id is valid
 
 `Demo Response`: `PARENT WITH CIVIL_ID : 462 IS UPDATED SUCCESSFULLY`
 
-`### 3. /child`
+### 3. /child
 
 #### 1. When triggered it returns List of childs already stored in Database.
 `method` : 
@@ -232,7 +232,7 @@ If one or more input values are null
 `Demo Response` :
             `INVALID INPUT : ONE OR MORE INPUT FIELDS ARE NULL`
             
-`### 4. /child/{civilId}`           
+### 4. /child/{civilId}           
 #### 1. When triggered it deletes the child with given civilId from Database.
 `method` : 
             DELETE
