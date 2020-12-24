@@ -21,6 +21,8 @@ public class ChildServiceImpl implements ChildService {
     @Autowired
     private ParentRepository parentRepository;
 
+    @Autowired
+    ParentServiceImpl parentServiceImpl;
 
     public ChildServiceImpl() {
         super();
@@ -87,6 +89,7 @@ public class ChildServiceImpl implements ChildService {
                 childRepository.deleteById(civilId);
             }
             childRepository.save(child);
+            parentServiceImpl.updateAParent(child.getParent(),child.getParent().getCivilId());
             addParentToParentCollection(child);
 
             return "CHILD WITH CIVIL_ID : "+civilId+" IS UPDATED SUCCESSFULLY";
