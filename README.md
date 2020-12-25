@@ -3,7 +3,7 @@ user-data-operator-application is a simple crud application that stores user dat
 ### The app has following basic features.
 - Data is composed of first name, last name, address (street, city, state and zip)
 - The app creates the following User types (Parent, Child). The child cannot have an address and Must belong to a parent
-- App have API to:
+- App has API to:
 	1. Delete user data
 	2. Create user data
 	3. Update user data
