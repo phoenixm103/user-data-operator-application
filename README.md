@@ -68,7 +68,8 @@ At this point our environment is ready and we are good to go to run the applicat
 
 
 ### Running .jar file in the host machine
-If anybody is not comfortable with containerization he could run the application  by ruuning the .jar file in his host machine
+Application will be run on the 6099 port of the host machine. To run the application-
+
 - Clone the code from github
 ``` 
 git clone https://github.com/phoenixm103/user-data-operator-application.git
