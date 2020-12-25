@@ -66,30 +66,6 @@ sudo docker exec -it mongo-container mongo
 ```
 At this point our environment is ready and we are good to go to run the application.
 
-### Running the application in Docker
-There are two ways to run the application in Docker.
-#### 1. Building image, Running container in the docker 
-- clone the code from github
-``` 
-git clone https://github.com/phoenixm103/user-data-operator-application.git
-```
-- in the root directory of the application where Dockerfile is available run build command to create the jar file
-```$xslt
-mvn clean install 
-```
-- .jar file will be created in ./target folder. To build the image and running the app in desired port, run
-```
-sudo docker build -t user-data-operator-application .
-sudo docker run -d -p 6099:6099 --name user-data-operator-application-container user-data-operator-application
-
-```
-The application is now running in the 6099 port of the host machine.
-##### 2. Pulling from Docker hub and running in the docker
-This is the easiest way to run the application. I have build an image and deploy it to my Docker hub account. Just pull it and run.
-To do so-
-```$xslt
-
-```
 
 ### Running .jar file in the host machine
 If anybody is not comfortable with containerization he could run the application  by ruuning the .jar file in his host machine
@@ -99,8 +75,9 @@ git clone https://github.com/phoenixm103/user-data-operator-application.git
 ```
 - In the target folder .jar file is available. To run the application, go to the target folder and open a terminal. then
 ```$xslt
-java -jar user-data-operator-application-0.0.1-SNAPSHOT.jar 
+java -jar user-data-operator-application-0.0.1-SNAPSHOT.jar
 ```
+*In this version I am not going to containerize the application and running on Docker. In the next version this application will be containerized and will be available in Docker hub.
 ### Documentation
 
 - [Api Documentation](./docs/api_documentation.md)
