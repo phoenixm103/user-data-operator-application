@@ -13,7 +13,6 @@ public class Parent {
 
 	public Parent() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Parent(String civilId, String firstname, String lastname, Address address) {

@@ -15,11 +15,8 @@ public class ChildController {
 	@Autowired
 	private ChildService childService;
 	
-	
-	
 	public ChildController() {
 		super();
-		//this.childService = childService;
 	}
 
 	@GetMapping

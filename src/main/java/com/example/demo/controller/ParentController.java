@@ -13,8 +13,17 @@ import com.example.demo.service.ParentService;
 public class ParentController {
     @Autowired
     private ParentService parentService;
+    
+    public ParentController(ParentService parentService) {
+		super();
+		this.parentService = parentService;
+	}
 
-    @GetMapping
+	public ParentController() {
+		super();
+	}
+
+	@GetMapping
     public List<Parent> getAllParent() {
         return parentService.getAllParent();
     }
@@ -64,7 +73,7 @@ public class ParentController {
     }
 
     @PutMapping("/{civilId}")
-    public String addAParent(@RequestBody Parent parent,@PathVariable String civilId) {
+    public String updateAParent(@RequestBody Parent parent,@PathVariable String civilId) {
 
         try {
             // INPUT VALIDATION

@@ -1,26 +1,21 @@
 package com.example.demo.serviceimplementation;
 
-
-import com.example.demo.model.Address;
-import com.example.demo.model.Child;
-import com.example.demo.model.Parent;
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.junit.Assert;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.junit.jupiter.MockitoExtension;
-
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-
-import com.example.demo.repository.ChildRepository;
-import org.springframework.context.annotation.Description;
+import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.mockito.Mockito.when;
+import org.junit.Assert;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 
+import com.example.demo.model.Address;
+import com.example.demo.model.Child;
+import com.example.demo.model.Parent;
+import com.example.demo.repository.ChildRepository;
 
 @ExtendWith(MockitoExtension.class)
 public class ChildServiceImplTest {
@@ -29,7 +24,6 @@ public class ChildServiceImplTest {
 	ChildServiceImpl childServiceImpl;
 	@Mock
 	ChildRepository childRepository;
-	
 
 	@Test
 	public void test_getAllChild() {
@@ -44,6 +38,5 @@ public class ChildServiceImplTest {
 		List<Child> childList2 = childRepository.findAll();
 		Assert.assertEquals(childList, childList2);
 	}
-
 
 }

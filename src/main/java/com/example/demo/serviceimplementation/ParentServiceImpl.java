@@ -15,6 +15,16 @@ import com.example.demo.service.ParentService;
 public class ParentServiceImpl implements ParentService {
 	@Autowired
 	private ParentRepository parentRepository;
+	
+	public ParentServiceImpl() {
+		super();
+	
+	}
+
+	public ParentServiceImpl(ParentRepository parentRepository) {
+		super();
+		this.parentRepository = parentRepository;
+	}
 
 	@Override
 	public List<Parent> getAllParent() {
