@@ -34,7 +34,7 @@
 - test_getAllChild
 
 # 3. ParentControllerTest
-[ParentControllerTestt Source Code Link](./../src/test/java/com/example/demo/controller/ParentControllerTest.java)
+[ParentControllerTest Source Code Link](./../src/test/java/com/example/demo/controller/ParentControllerTest.java)
 ### Scenerio #01
 - test_addAParent
 ### Scenerio #02
